@@ -6,6 +6,36 @@ toDoFormDOM.addEventListener('submit', addItem);
 
 load();
 
+toDoList.addEventListener("mouseover", function (event) {
+    let targetElement = event.target;
+
+    if (targetElement.tagName === "LI") {
+        targetElement.style.backgroundColor = "teal";
+    }
+});
+
+toDoList.addEventListener("click", function (event) {
+    let targetElement = event.target;
+
+    if (targetElement.tagName === "LI") {
+        if (targetElement.style.textDecoration === "line-through") {
+            targetElement.style.textDecoration = "";  
+        } else {
+            targetElement.style.textDecoration = "line-through"; 
+        }
+    }
+});
+
+toDoList.addEventListener("mouseout", function (event) {
+    let targetElement = event.target;
+
+    if (targetElement.tagName === "LI") {
+        targetElement.style.backgroundColor = ""; 
+    }
+});
+
+
+
 function load() {
     let items = localStorage.getItem("items");
     if (!items) {
