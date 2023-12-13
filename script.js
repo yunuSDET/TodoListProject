@@ -20,8 +20,10 @@ toDoList.addEventListener("click", function (event) {
     if (targetElement.tagName === "LI") {
         if (targetElement.style.textDecoration === "line-through") {
             targetElement.style.textDecoration = "";  
+            
         } else {
             targetElement.style.textDecoration = "line-through"; 
+            
         }
     }
 });
